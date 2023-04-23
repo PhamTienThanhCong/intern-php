@@ -26,7 +26,8 @@
                             alt="logo {{ config('app.name', 'Laravel') }}"
                             style="width: 170px; max-width: 90%; height: auto">
                     </div>
-                    <form action="" class="w-100" style="max-width: 400px; margin-top: 50px">
+                    <form action="" style="max-width: 400px; margin-top: 50px"
+                        class="w-100 @if (session()->has('error')) form-error @endif">
                         <label for="username" class="form-label">
                             Tên đăng nhập
                             <span style="color: red">
@@ -34,7 +35,8 @@
                             </span>
                         </label>
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" id="username" placeholder="Tên đăng nhập">
+                            <input type="text" class="form-control form-error" id="username"
+                                placeholder="Tên đăng nhập">
                         </div>
                         <label for="password" class="form-label">
                             Mật khẩu
@@ -42,7 +44,7 @@
                                 *
                             </span>
                         </label>
-                        <div class="input-group" style="position: relative">
+                        <div class="input-group mb-3" style="position: relative">
                             <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
                             <div class="btn-toggle-password-div">
                                 <button class="btn-toggle-password" type="button" id="togglePassword">
