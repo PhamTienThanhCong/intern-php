@@ -18,75 +18,67 @@
 
 <body>
     <div class="container-web">
-        <div class="navbar">
-            <div class="navbar-logo">
-                <a href="">
-                    <img src="{{ asset('images/logo.png') }}" alt="Logo">
-                </a>
-            </div>
-            <ul class="navbar-menu">
-                <a href="">
-                    <li class="item item-active">
-                        {{-- icon Dashboard --}}
-                        <i class="fas fa-tachometer-alt"></i>
-                        Dashboard
-                    </li>
-                </a>
-                <a href="">
-                    <li class="item">
-                        <i class="fa-solid fa-display"></i>
-                        thiết bị
-                    </li>
-                </a>
-                <a href="">
-                    <li class="item">
-                        <i class="fa-regular fa-comments"></i>
-                        dịch vụ
-                    </li>
-                </a>
-                <a href="">
-                    <li class="item">
-                        <i class="fa-solid fa-layer-group"></i>
-                        cấp số
-                    </li>
-                </a>
-                <a href="">
-                    <li class="item">
-                        <i class="fa-regular fa-file-lines"></i>
-                        báo cáo
-                    </li>
-                </a>
-                <li href="#" class="item item-func">
-                    <i class="fa-solid fa-gear"></i>
-                    cài đặt hệ thống
-                    <i class="fa-solid fa-ellipsis-vertical" style="width: 5px; margin-left: 8px"></i>
-                    <ul class="sub-nav">
-                        <a href="">
-                            <li class="item">
-                                Quản lý vài trò
-                            </li>
-                        </a>
-                        <a href="">
-                            <li class="item">
-                                Quản lý tài khoản
-                            </li>
-                        </a>
-                        <a href="">
-                            <li class="item">
-                                nhật kí người dùng
-                            </li>
-                        </a>
-                    </ul>
-                </li>
-                <a href="">
-                    <li class="item item-end">
-                        <i class="fas fa-sign-out-alt"></i>
-                        Logout
-                    </li>
-                </a>
-            </ul>
-        </div>
+        {{-- import navbar --}}
+        @include('components.navbar')
+
         <div class="content-web">
+            <div class="topbar">
+                <ul class="page-name">
+                    <li>
+                        <a href="">
+                            test
+                        </a>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+                    <li>
+                        <a href="">
+                            test
+                        </a>
+                        <i class="fas fa-chevron-right"></i>
+
+                    </li>
+                    <li>
+                        <a href="">
+                            @yield('webName')
+                        </a>
+                        <i class="fas fa-chevron-right"></i>
+                    </li>
+                </ul>
+                <div class="user-profile">
+                    <div class="bell-alert">
+                        <div class="fa-solid fa-bell"></div>
+                        <div class="pop-up-alert">
+                            <div class="header-pop-up">
+                                <p>
+                                    Thông báo
+                                </p>
+                            </div>
+                            <ul class="pop-up-content">
+                                <li>
+                                    <p>
+                                        
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="">
+                        <div class="infor-user">
+                            <div class="avatar">
+                                <img src="{{ asset('images/avatar.jpg') }}" alt="avatar">
+                            </div>
+                            <div class="info-user-name">
+                                <span>
+                                    Xin chào
+                                </span>
+                                <p>
+                                    Trần Bình Dương
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
             @yield('content')
         </div>
     </div>
