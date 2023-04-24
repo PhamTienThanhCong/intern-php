@@ -22,63 +22,7 @@
         @include('components.navbar')
 
         <div class="content-web">
-            <div class="topbar">
-                <ul class="page-name">
-                    <li>
-                        <a href="">
-                            test
-                        </a>
-                        <i class="fas fa-chevron-right"></i>
-                    </li>
-                    <li>
-                        <a href="">
-                            test
-                        </a>
-                        <i class="fas fa-chevron-right"></i>
-
-                    </li>
-                    <li>
-                        <a href="">
-                            @yield('webName')
-                        </a>
-                        <i class="fas fa-chevron-right"></i>
-                    </li>
-                </ul>
-                <div class="user-profile">
-                    <div class="bell-alert">
-                        <div class="fa-solid fa-bell"></div>
-                        <div class="pop-up-alert">
-                            <div class="header-pop-up">
-                                <p>
-                                    Thông báo
-                                </p>
-                            </div>
-                            <ul class="pop-up-content">
-                                <li>
-                                    <p>
-                                        
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <a href="">
-                        <div class="infor-user">
-                            <div class="avatar">
-                                <img src="{{ asset('images/avatar.jpg') }}" alt="avatar">
-                            </div>
-                            <div class="info-user-name">
-                                <span>
-                                    Xin chào
-                                </span>
-                                <p>
-                                    Trần Bình Dương
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            @include('components.topbar')
             @yield('content')
         </div>
     </div>
@@ -86,6 +30,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
+<script src="{{ asset('js/main.js') }}"></script>
 @yield('js')
 
 </html>
