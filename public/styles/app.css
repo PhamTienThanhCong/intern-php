@@ -4,6 +4,11 @@
     display: flex;
 }
 
+.content-web{
+    padding: 24px;
+    width: calc(100% - 200px);
+}
+
 a{
     text-decoration: none;
     color: inherit;
@@ -13,6 +18,14 @@ a:hover{
     text-decoration: none;
     color: inherit;
 }
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* navbar start */
 
 .container-web .navbar{
     width: 200px;
@@ -36,9 +49,6 @@ a:hover{
 
 .container-web .navbar .navbar-menu{
     width: 100%;
-    list-style: none;
-    padding: 0;
-    margin: 0;
     margin-top: 40px;
 }
 
@@ -85,14 +95,11 @@ a:hover{
 }
 
 .sub-nav{
-    list-style: none;
     position: absolute;
     top: 0;
     left: 100%;
     width: 220px;
     background-color: white;
-    margin: 0;
-    padding: 0;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     display: none;
@@ -100,4 +107,125 @@ a:hover{
 
 .container-web .navbar .navbar-menu .item-func:hover .sub-nav{
     display: block;
+}
+
+/* navbar end :v */
+
+
+/* topbar start */
+.topbar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.page-name{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.page-name li{
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 700;
+    color: #7E7D88;
+    text-transform: capitalize;
+}
+
+.page-name li i{
+    font-size: 10px;
+    margin: 0 10px;
+    transform: translateY(-2px);
+}
+
+/* last child */
+.page-name li:last-child{
+    color: #FF7506;
+}
+
+.page-name li:last-child i{
+    display: none;
+}
+
+.bell-alert{
+    cursor: pointer;
+    margin-right: 24px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.bell-alert .fa-bell{
+    color: #FF7506;
+    padding: 8px 10px;
+    background-color: #FFF2E7;
+    border-radius: 50%;
+}
+
+.user-profile, .infor-user{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 40px;
+}
+
+.info-user-name{
+    height: 40px;
+    margin-right: 40px;
+    transform: translate(10px, -2px);
+}
+
+.info-user-name span{
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.info-user-name p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    line-height: 18px;
+}
+
+.infor-user .avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.infor-user .avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.pop-up-alert{
+    position: absolute;
+    width: 360px;
+    top: calc(100% + 27px);
+    left: -95px;
+    border-radius: 10px;
+    overflow: hidden;
+    max-height: 526px;
+}
+
+.header-pop-up{
+    background-color: #FF9138;
+    padding: 9px 24px;
+}
+
+.header-pop-up p{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.pop-up-content{
+    height: 487px;
+    background-color: white;
 }
