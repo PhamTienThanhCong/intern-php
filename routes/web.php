@@ -26,3 +26,7 @@ Route::get('/forgot-password', function () {
 Route::get('/new-password', function () {
     return view('auth/new-password');
 })->name('auth.new-password');
+
+Route::get('/auth/my-profile', function () {
+    return view('auth/my-profile');
+})->name('auth.my-profile');

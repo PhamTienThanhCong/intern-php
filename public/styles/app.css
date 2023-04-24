@@ -1,0 +1,103 @@
+.container-web{
+    background: #F7F7F7;
+    min-height: 100vh;
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover{
+    text-decoration: none;
+    color: inherit;
+}
+
+.container-web .navbar{
+    width: 200px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: block !important;
+    position: relative;
+}
+
+.container-web .navbar .navbar-logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.container-web .navbar .navbar-logo img{
+    width: 80px;
+    height: 64px;
+}
+
+.container-web .navbar .navbar-menu{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 40px;
+}
+
+.container-web .navbar .navbar-menu .item{
+    font-size: 16px;
+    font-weight: 600;
+    color: #7E7D88;
+    padding: 12px 15px;
+    /* viết hoa chữ cái đầu tiên */
+    text-transform: capitalize;
+    width: 100%;
+}
+
+.container-web .navbar .navbar-menu .item i{
+    width: 20px;
+    height: 20px;
+}
+
+.container-web .navbar .navbar-menu .item:hover{
+    color: #FF7506;
+    background-color: #FFF2E7;
+}
+
+.container-web .navbar .navbar-menu .item-active{
+    color: #FFF2E7;
+    background-color: #FF7506;
+}
+
+.container-web .navbar .navbar-menu .item-active:hover{
+    color: #FFF2E7;
+    background-color: #FF7506;
+}
+
+.container-web .navbar .navbar-menu .item-end{
+    width: 100%;
+    color: #FF7506;
+    background-color: #FFF2E7;
+    position: absolute;
+    bottom: 30px;
+}
+
+.container-web .navbar .navbar-menu .item-func{
+    position: relative;
+}
+
+.sub-nav{
+    list-style: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 220px;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    display: none;
+}
+
+.container-web .navbar .navbar-menu .item-func:hover .sub-nav{
+    display: block;
+}

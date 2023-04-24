@@ -26,7 +26,7 @@
                             alt="logo {{ config('app.name', 'Laravel') }}"
                             style="width: 170px; max-width: 90%; height: auto">
                     </div>
-                    <form action="" style="max-width: 400px; margin-top: 50px"
+                    <form action="{{ route("auth.my-profile") }}" style="max-width: 400px; margin-top: 50px"
                         class="w-100 @if (session()->has('error')) form-error @endif">
                         <label for="username" class="form-label">
                             Tên đăng nhập
