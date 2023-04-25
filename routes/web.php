@@ -43,3 +43,7 @@ Route::get('/auth/my-profile', function () {
 
     return view('auth/my-profile', compact("data"));
 })->name('auth.my-profile');
+
+Route::get('/auth/device', function () {
+    return view('pages/device/index');
+})->name('auth.device.index');

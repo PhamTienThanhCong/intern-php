@@ -6,14 +6,14 @@
     </div>
     <ul class="navbar-menu">
         <a href="">
-            <li class="item item-active">
+            <li class="item">
                 {{-- icon Dashboard --}}
                 <i class="fas fa-tachometer-alt"></i>
                 Dashboard
             </li>
         </a>
-        <a href="">
-            <li class="item">
+        <a href="{{ route('auth.device.index') }}">
+            <li class="item{{ request()->routeIs('auth.device.*') ? ' item-active' : '' }}">
                 <i class="fa-solid fa-display"></i>
                 thiết bị
             </li>
