@@ -1,6 +1,6 @@
 <div class="topbar">
     <ul class="page-name">
-        <li>
+        {{-- <li>
             <a href="">
                 test
             </a>
@@ -12,7 +12,7 @@
             </a>
             <i class="fas fa-chevron-right"></i>
 
-        </li>
+        </li> --}}
         <li>
             <a href="">
                 @yield('webName')
@@ -43,7 +43,7 @@
                 </ul>
             </div>
         </div>
-        <a href="">
+        <a href="{{ route("auth.my-profile") }}">
             <div class="infor-user">
                 <div class="avatar">
                     <img src="{{ asset('images/avatar.jpg') }}" alt="avatar">

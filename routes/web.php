@@ -19,6 +19,10 @@ Route::get('/', function () {
     return view('auth/login');
 })->name('auth.login');
 
+Route::post('/logging', function(){
+    return redirect()->route('auth.my-profile');
+})->name('auth.logging');
+
 Route::get('/forgot-password', function () {
     return view('auth/forgot-password');
 })->name('auth.forgot-password');
@@ -28,5 +32,14 @@ Route::get('/new-password', function () {
 })->name('auth.new-password');
 
 Route::get('/auth/my-profile', function () {
-    return view('auth/my-profile');
+    $data = (object) [
+        'name' => 'Trần Bình Dương',
+        'email' => 'admin@gmail.com',    
+        'phone' => '0123456789',    
+        'username' => 'tranbinhduong0909',    
+        'password' => '123123',    
+        'role' => 'Developer',
+    ];
+
+    return view('auth/my-profile', compact("data"));
 })->name('auth.my-profile');
