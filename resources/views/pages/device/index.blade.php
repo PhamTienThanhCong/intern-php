@@ -46,7 +46,7 @@
                 </form>
                 <div class="col-md-12" style="margin-top: 16px; position: relative">
                     <!-- Content -->
-                    <a href="">
+                    <a href="{{ route('auth.device.create') }}">
                         <button class="btn-add">
                             <i class="fa-solid fa-plus"></i>
                             <p>
@@ -93,8 +93,8 @@
                                             hô hấp, khám tổng quan
                                         </span>
                                     </td>
-                                    <td><a class="tag-active" href="#">Chi tiết</a></td>
-                                    <td><a class="tag-active" href="#">Kiểm tra</a></td>
+                                    <td><a class="tag-active" href="{{ route('auth.device.detail', $i) }}">Chi tiết</a></td>
+                                    <td><a class="tag-active" href="{{ route('auth.device.edit', $i) }}">Cập nhập</a></td>
                                 </tr>
                             @endfor
                         </tbody>
