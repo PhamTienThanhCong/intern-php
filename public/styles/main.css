@@ -245,7 +245,7 @@
     width: 100%;
     max-width: 1152px;
     border-radius: 10px;
-    position: absolute;
+    position: relative;
     min-height: 450px;
 }
 
@@ -257,7 +257,8 @@
 }
 
 .content-white .form-group select,
-.content-white .form-group input {
+.content-white .form-group input,
+.content-white .form-group textarea {
     width: 100%;
 }
 
@@ -326,4 +327,21 @@
     font-size: 16px;
     line-height: 24px;
     color: #535261;
+}
+
+.form-check-input{
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    max-width: 20px;
+    margin-right: 8px;
+    padding: 0 !important;
+}
+
+.mini-input{
+    width: 70px !important;
+    min-width: 60px !important;
+    max-width: 60px !important;
+    margin-right: 15px !important;
+    display: inline-block;
 }

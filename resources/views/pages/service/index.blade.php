@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('webName', 'Danh sách thiết bị')
+@section('webName', 'Danh sách dịch vụ')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('styles/main.css') }}">
@@ -9,7 +9,7 @@
 @section('content')
     <div class="content-profile">
         <p class="title">
-            @yield('webName')
+            Quản lý dịch vụ
         </p>
         <div class="content-container">
             <div class="content">
@@ -26,13 +26,13 @@
                             <i class="fa-solid fa-caret-down"></i>
                         </div>
                         <div class="form-group">
-                            <label for="connected_status">Trạng thái kết nối</label>
-                            <select class="form-control" name="connected_status" id="connected_status">
+                            <label for="connected_status">Chọn thời gian</label>
+                            {{-- <select class="form-control" name="connected_status" id="connected_status">
                                 <option value="all">Tất cả</option>
                                 <option value="yes">Kết nối</option>
                                 <option value="no">Mất kết nối</option>
-                            </select>
-                            <i class="fa-solid fa-caret-down"></i>
+                            </select> --}}
+                            <input type="text" id="daterange" name="daterange" class="form-control">
                         </div>
                     </div>
                     <div class="search-right">
@@ -46,23 +46,22 @@
                 </form>
                 <div class="col-md-12" style="margin-top: 16px; position: relative">
                     <!-- Content -->
-                    <a href="{{ route('auth.device.create') }}">
+                    <a href="{{ route('auth.service.create') }}">
                         <button class="btn-add">
                             <i class="fa-solid fa-plus"></i>
                             <p>
-                                Thêm thiết bị
+                                Thêm <br>
+                                dịch vụ
                             </p>
                         </button>
                     </a>
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>Mã thiết bị</th>
-                                <th>Tên thiết bị</th>
-                                <th>Địa chỉ IP</th>
+                                <th>Mã dịch vụ</th>
+                                <th>Tên dịch vụ</th>
+                                <th>Mô tả</th>
                                 <th>Trạng thái hoạt động</th>
-                                <th>Trạng thái kết nối</th>
-                                <th>Sử dụng dịch vụ</th>
                                 <th></th>
                                 <th></th>
                             </tr>
@@ -71,30 +70,19 @@
                             @for ($i = 0; $i < 10; $i++)
                                 <tr>
                                     <td>123456</td>
-                                    <td>Tên thiết bị 1</td>
-                                    <td>192.168.1.1</td>
+                                    <td>Tên thiết dịch vụ</td>
+                                    <td>Mô tả dịch vụ</td>
                                     <td>
                                         @if ($i % 2 == 0)
                                             <i class="fa-solid fa-circle connected"></i>
+                                            Hoạt động
                                         @else
                                             <i class="fa-solid fa-circle unconnected"></i>
+                                            Ngưng hoạt động
                                         @endif
-                                        Trực tuyến
                                     </td>
-                                    <td>Có</td>
-                                    <td class="view-detail-text">
-                                        <span class="text-view">
-                                            khám tim mạch, khám mắt...
-                                            <br>
-                                            <a class="tag-active btn-text-active">Xem thêm</a>
-                                        </span>
-                                        <span class="text-hidden">
-                                            khám tim mạch, khám sản - phụ khoa, khám răng hàm mặt, khám tai mũi họng, khám
-                                            hô hấp, khám tổng quan
-                                        </span>
-                                    </td>
-                                    <td><a class="tag-active" href="{{ route('auth.device.show', $i) }}">Chi tiết</a></td>
-                                    <td><a class="tag-active" href="{{ route('auth.device.edit', $i) }}">Cập nhập</a></td>
+                                    <td><a class="tag-active" href="{{ route('auth.service.show', $i) }}">Chi tiết</a></td>
+                                    <td><a class="tag-active" href="{{ route('auth.service.edit', $i) }}">Cập nhập</a></td>
                                 </tr>
                             @endfor
                         </tbody>
@@ -125,7 +113,17 @@
 @endsection
 
 @section('js')
-    <script>
+
+
+<script>
+    $(function() {
+        $('#daterange').daterangepicker({
+            opens: 'left'
+        }, function(start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+        });
+    });
+
         var textViews = document.querySelectorAll('.text-view');
         var textHiddens = document.querySelectorAll('.text-hidden');
 

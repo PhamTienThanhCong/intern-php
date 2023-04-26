@@ -18,8 +18,8 @@
                 thiết bị
             </li>
         </a>
-        <a href="">
-            <li class="item">
+        <a href="{{ route('auth.service.index') }}">
+            <li class="item{{ request()->routeIs('auth.service.*') ? ' item-active' : '' }}">
                 <i class="fa-regular fa-comments"></i>
                 dịch vụ
             </li>

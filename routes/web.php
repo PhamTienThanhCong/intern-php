@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,36 +46,20 @@ Route::get('/auth/my-profile', function () {
     return view('auth/my-profile', compact("data"));
 })->name('auth.my-profile');
 
-Route::get('/auth/device', function () {
-    return view('pages/device/index');
-})->name('auth.device.index');
+Route::resource('/auth/device', DeviceController::class)->names([
+    'index' => 'auth.device.index',
+    'create' => 'auth.device.create',
+    'edit' => 'auth.device.edit',
+    'update' => 'auth.device.update',
+    'show' => 'auth.device.show',
+    'destroy' => 'auth.device.destroy',
+]);
 
-Route::get('/auth/device/create', function () {
-    return view('pages/device/create');
-})->name('auth.device.create');
-
-Route::get('/auth/device/{id}/edit', function ($id) {
-    $data = (object) [
-        "device_id" => "DV1234",
-        "device_type" => "connected",
-        "device_name" => "Máy tính xách tay",
-        "device_username" => "user123",
-        "device_ip" => "192.168.1.100",
-        "device_password" => "p@ssw0rd",
-        "service" => "Email"       
-    ];
-    return view('pages/device/edit', compact("data", 'id'));
-})->name('auth.device.edit');
-
-Route::get('/auth/device/{id}', function ($id) {
-    $data = (object) [
-        "device_id" => "DV1234",
-        "device_type" => "connected",
-        "device_name" => "Máy tính xách tay",
-        "device_username" => "user123",
-        "device_ip" => "192.168.1.100",
-        "device_password" => "p@ssw0rd",
-        "service" => "Email"       
-    ];
-    return view('pages/device/detail', compact("data", 'id'));
-})->name('auth.device.detail');
+Route::resource('/auth/service', ServiceController::class)->names([
+    'index' => 'auth.service.index',
+    'create' => 'auth.service.create',
+    'edit' => 'auth.service.edit',
+    'update' => 'auth.service.update',
+    'show' => 'auth.service.show',
+    'destroy' => 'auth.service.destroy',
+]);

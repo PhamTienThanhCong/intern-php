@@ -63,7 +63,7 @@
                                       
                 </div>
                 <div class="form-btn">
-                    <a href="{{ route('auth.device.detail', $id) }}">
+                    <a href="{{ route('auth.device.show', $id) }}">
                         <button class="btn btn-blur">Hủy bỏ</button>
                     </a>
                     <button class="btn btn-bold" onclick="submit()">Cập nhập</button>
