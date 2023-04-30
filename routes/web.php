@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\QueueController;
 use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
@@ -63,3 +64,15 @@ Route::resource('/auth/service', ServiceController::class)->names([
     'show' => 'auth.service.show',
     'destroy' => 'auth.service.destroy',
 ]);
+
+Route::resource('/auth/queue', QueueController::class)->names([
+    'index' => 'auth.queue.index',
+    'create' => 'auth.queue.create',
+    'update' => 'auth.queue.update',
+    'show' => 'auth.queue.show',
+    'destroy' => 'auth.queue.destroy',
+]);
+
+Route::get('/auth/report', function () {
+    return view('pages/report/index');
+})->name('auth.report.index');

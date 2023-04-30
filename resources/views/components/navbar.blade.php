@@ -24,14 +24,14 @@
                 dịch vụ
             </li>
         </a>
-        <a href="">
-            <li class="item">
+        <a href="{{ route('auth.queue.index') }}">
+            <li class="item{{ request()->routeIs('auth.queue.*') ? ' item-active' : '' }}">
                 <i class="fa-solid fa-layer-group"></i>
                 cấp số
             </li>
         </a>
-        <a href="">
-            <li class="item">
+        <a href="{{ route('auth.report.index') }}">
+            <li class="item{{ request()->routeIs('auth.report.*') ? ' item-active' : '' }}">
                 <i class="fa-regular fa-file-lines"></i>
                 báo cáo
             </li>

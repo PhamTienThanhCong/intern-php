@@ -107,6 +107,7 @@ ul {
 
 .container-web .navbar .navbar-menu .item-func:hover .sub-nav {
     display: block;
+    z-index: 9999;
 }
 
 /* navbar end :v */
