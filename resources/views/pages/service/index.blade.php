@@ -5,27 +5,7 @@
 @section('css')
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
     <link rel="stylesheet" href="{{ asset('styles/main.css') }}">
-    <style>
-        .applyBtn{
-            background-color: #FF9138 !important;
-            border: #FF9138 !important;
-        }
-        .applyBtn:hover{
-            background-color: #FF9138 !important;
-            border: #FF9138 !important;
-        }
-        .daterangepicker td.active, .daterangepicker td.active:hover{
-            background-color: #FF9138 !important;
-            border: #FF9138 !important;
-        }
-        .daterangepicker td.in-range{
-            background-color: #FFF2E7 !important;,
-        }
-        .daterangepicker td.active, .daterangepicker td.active:hover{
-            background-color: #FF9138 !important;
-            border: #FF9138 !important;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('styles/format_css_date_time.css') }}">
 @endsection
 
 @section('content')

@@ -35,8 +35,8 @@ class ServiceController extends Controller
     {
         $data = (object) [
             "service_id" => "DV1234",
-            "service_type" => "connected",
             "service_name" => "Máy tính xách tay",
+            "service_description" => "Chuyển các bệnh về tim ",
             "service_username" => "user123",
             "service_ip" => "192.168.1.100",
             "service_password" => "p@ssw0rd",
