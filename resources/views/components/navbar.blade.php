@@ -31,12 +31,12 @@
             </li>
         </a>
         <a href="{{ route('auth.report.index') }}">
-            <li class="item{{ request()->routeIs('auth.report.*') ? ' item-active' : '' }}">
+            <li class="item{{ request()->routeIs('auth.report.index') ? ' item-active' : '' }}">
                 <i class="fa-regular fa-file-lines"></i>
                 báo cáo
             </li>
         </a>
-        <li href="" class="item item-func">
+        <li href="" class="item item-func{{ request()->routeIs('system.*') ? ' item-active' : '' }}">
             <i class="fa-solid fa-gear"></i>
             cài đặt hệ thống
             <i class="fa-solid fa-ellipsis-vertical" style="width: 5px; margin-left: 8px"></i>
@@ -46,13 +46,13 @@
                         Quản lý vài trò
                     </li>
                 </a>
-                <a href="">
-                    <li class="item">
+                <a href="{{ route('system.user.index') }}">
+                    <li class="item{{ request()->routeIs('system.user.*') ? ' item-active' : '' }}">
                         Quản lý tài khoản
                     </li>
                 </a>
-                <a href="">
-                    <li class="item">
+                <a href="{{ route('system.history_user') }}">
+                    <li class="item{{ request()->routeIs('system.history_user') ? ' item-active' : '' }}">
                         nhật kí người dùng
                     </li>
                 </a>

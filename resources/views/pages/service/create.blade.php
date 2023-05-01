@@ -99,6 +99,8 @@
                                 </p>
                             </div>
                         </div>
+                        <button type="submit" style="display: none" id="btn-submit"></button>
+
                     </form>
                 </div>
                 <div class="form-btn">
@@ -113,9 +115,5 @@
 @endsection
 
 @section('js')
-    <script>
-        function submit() {
-            document.getElementById('form-submit').submit();
-        }
-    </script>
+
 @endsection

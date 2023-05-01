@@ -3,6 +3,7 @@
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\QueueController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -76,3 +77,15 @@ Route::resource('/auth/queue', QueueController::class)->names([
 Route::get('/auth/report', function () {
     return view('pages/report/index');
 })->name('auth.report.index');
+
+Route::get('/system/history_user', function () {
+    return view('pages/report/history_user');
+})->name('system.history_user');
+
+Route::resource('/system/user', UserController::class)->names([
+    'index' => 'system.user.index',
+    'create' => 'system.user.create',
+    'edit' => 'system.user.edit',
+    'update' => 'system.user.update',
+    'destroy' => 'system.user.destroy',
+]);

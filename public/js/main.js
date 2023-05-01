@@ -9,3 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function submit(){
+    document.getElementById('btn-submit').click();
+}
