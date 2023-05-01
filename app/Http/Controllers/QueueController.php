@@ -13,7 +13,25 @@ class QueueController extends Controller
 
     public function create()
     {
-        return view('pages/queue/create');
+        $queue_service = [
+            (object) [
+                "service_id" => "DV1234",
+                "service_name" => "Khám tim mạch",
+            ],
+            (object) [
+                "service_id" => "DV1234",
+                "service_name" => "Khám phổi",
+            ],
+            (object) [
+                "service_id" => "DV1234",
+                "service_name" => "Khám tai mũi họng",
+            ],
+            (object) [
+                "service_id" => "DV1234",
+                "service_name" => "Khám mắt",
+            ],
+        ];
+        return view('pages/queue/create', compact("queue_service"));
     }
 
     public function edit($id)
