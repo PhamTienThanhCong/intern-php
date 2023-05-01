@@ -75,11 +75,21 @@ Route::resource('/auth/queue', QueueController::class)->names([
 ]);
 
 Route::get('/auth/report', function () {
-    return view('pages/report/index');
+    $records = [
+        (object)[
+            'name' => 'Báo cáo'
+        ]
+    ];
+    return view('pages/report/index',['records' => $records]);
 })->name('auth.report.index');
 
 Route::get('/system/history_user', function () {
-    return view('pages/report/history_user');
+    $records = [
+        (object)[
+            'name' => 'Cài đặt hệ thống'
+        ]
+    ];
+    return view('pages/report/history_user', ['records' => $records]);
 })->name('system.history_user');
 
 Route::resource('/system/user', UserController::class)->names([

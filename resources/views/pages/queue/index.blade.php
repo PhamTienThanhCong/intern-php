@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('webName', 'Danh sách dịch vụ')
+@section('webName', 'Danh sách cấp số')
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />

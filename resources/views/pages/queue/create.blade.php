@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('webName', 'Cập nhật cấp số')
+@section('webName', 'Cấp số mới')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('styles/main.css') }}">

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('webName', 'Cập nhật thiết bị')
+@section('webName', 'Thêm thiết bị')
 
 @section('css')
     <link rel="stylesheet" href="{{ asset('styles/main.css') }}">
