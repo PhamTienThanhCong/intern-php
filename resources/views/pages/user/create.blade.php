@@ -35,6 +35,18 @@
                         </div>
                         <div class="form-group">
                             <label for="password">Mật khẩu: <span style="color: red; font-size: 18px">*</span></label>
+                            <div class="input-group">
+                                <input type="password" name="password" class="form-control" id="password"
+                                    placeholder="Mật khẩu">
+                                <div class="btn-toggle-password-div">
+                                    <button class="btn-toggle-password" type="button" id="togglePassword">
+                                        <i class="fa-regular fa-eye icon"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Mật khẩu: <span style="color: red; font-size: 18px">*</span></label>
                             <input type="text" class="form-control" id="password" name="password" required placeholder="Nhập mật khẩu">
                         </div>
                         <div class="form-group">
@@ -42,8 +54,17 @@
                             <input type="text" class="form-control" id="email" name="email" required placeholder="Nhập email">
                         </div>
                         <div class="form-group">
-                            <label for="device_ip">Nhập lại mật khẩu: <span style="color: red; font-size: 18px">*</span></label>
-                            <input type="text" class="form-control" id="device_ip" name="device_ip" required placeholder="Nhập lại mật khẩu">
+                            <label for="device_ip">Nhập lại mật khẩu: <span
+                                    style="color: red; font-size: 18px">*</span></label>
+                            <div class="input-group">
+                                <input type="password" name="comfirm-password" class="form-control" id="comfirm-password"
+                                    placeholder="Xác nhận mật khẩu">
+                                <div class="btn-toggle-password-div">
+                                    <button class="btn-toggle-password" type="button" id="toggleComfirmPassword">
+                                        <i class="fa-regular fa-eye icon"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="device_type">Vai trò: <span style="color: red; font-size: 18px">*</span></label>
@@ -84,5 +105,20 @@
 @endsection
 
 @section('js')
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script>
+        function togglePassword(field, button) {
+            button.addEventListener("click", function() {
+                const type = field.getAttribute("type") === "password" ? "text" : "password";
+                field.setAttribute("type", type);
+                button.innerHTML = type === "password" ? '<i class="fa-regular icon fa-eye"></i>' :
+                    '<i class="fa-regular icon fa-eye-slash"></i>';
+            });
+        }
 
+        togglePassword(document.getElementById("password"), document.getElementById("togglePassword"));
+        togglePassword(document.getElementById("comfirm-password"), document.getElementById("toggleComfirmPassword"));
+    </script>
 @endsection
