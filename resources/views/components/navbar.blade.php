@@ -41,8 +41,8 @@
             cài đặt hệ thống
             <i class="fa-solid fa-ellipsis-vertical" style="width: 5px; margin-left: 8px"></i>
             <ul class="sub-nav">
-                <a href="">
-                    <li class="item">
+                <a href="{{ route('system.role.index') }}">
+                    <li class="item{{ request()->routeIs('system.role.*') ? ' item-active' : '' }}">
                         Quản lý vài trò
                     </li>
                 </a>

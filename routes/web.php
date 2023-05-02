@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\QueueController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -98,4 +99,12 @@ Route::resource('/system/user', UserController::class)->names([
     'edit' => 'system.user.edit',
     'update' => 'system.user.update',
     'destroy' => 'system.user.destroy',
+]);
+
+Route::resource('/system/role', RoleController::class)->names([
+    'index' => 'system.role.index',
+    'create' => 'system.role.create',
+    'edit' => 'system.role.edit',
+    'update' => 'system.role.update',
+    'destroy' => 'system.role.destroy',
 ]);
