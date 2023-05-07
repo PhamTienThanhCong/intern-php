@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\QueueController;
 use App\Http\Controllers\RoleController;
@@ -18,36 +19,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    // create session flash username and password for testing
-    // session()->flash('error', 'Sai mật khẩu hoặc tên đăng nhập');
-    return view('auth/login');
-})->name('auth.login');
-
-Route::post('/logging', function(){
-    return redirect()->route('auth.my-profile');
-})->name('auth.logging');
-
-Route::get('/forgot-password', function () {
-    return view('auth/forgot-password');
-})->name('auth.forgot-password');
-
-Route::get('/new-password', function () {
-    return view('auth/new-password');
-})->name('auth.new-password');
-
-Route::get('/auth/my-profile', function () {
-    $data = (object) [
-        'name' => 'Trần Bình Dương',
-        'email' => 'admin@gmail.com',    
-        'phone' => '0123456789',    
-        'username' => 'tranbinhduong0909',    
-        'password' => '123123',    
-        'role' => 'Developer',
-    ];
-
-    return view('auth/my-profile', compact("data"));
-})->name('auth.my-profile');
+// route for AuthController
+Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
+Route::post('/auth/logging', [AuthController::class, 'logging'])->name('auth.logging');
+Route::get('/auth/forgot-password', [AuthController::class, 'forgotPassword'])->name('auth.forgot-password');
+Route::get('/auth/new-password', [AuthController::class, 'newPassword'])->name('auth.new-password');
+Route::get('/auth/my-profile', [AuthController::class, 'myProfile'])->name('auth.my-profile');
 
 Route::resource('/auth/device', DeviceController::class)->names([
     'index' => 'auth.device.index',
@@ -104,6 +81,7 @@ Route::resource('/system/user', UserController::class)->names([
 Route::resource('/system/role', RoleController::class)->names([
     'index' => 'system.role.index',
     'create' => 'system.role.create',
+    'store' => 'system.role.store',
     'edit' => 'system.role.edit',
     'update' => 'system.role.update',
     'destroy' => 'system.role.destroy',

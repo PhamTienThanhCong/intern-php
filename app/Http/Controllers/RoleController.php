@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\action;
+use App\Models\role;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -28,9 +30,20 @@ class RoleController extends Controller
 
     public function create()
     {
+        $action_list = action::orderBy('group')->get();
+        $action_list = $action_list->groupBy('group');
+    
         return view('pages/role/create', [
+            'action_list' => $action_list,
             'records' => $this->records
         ]);
+    }
+
+    // store
+    public function store(Request $request)
+    {
+        // Xử lý lưu tài nguyên
+        dd($request->all());
     }
 
     public function edit($id)

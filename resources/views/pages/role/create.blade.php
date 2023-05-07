@@ -15,8 +15,9 @@
         <div class="content-container">
             <div class="content">
                 <div class="content-white">
-                    <form class="col-md-12 form-search" id="form-submit">
+                    <form class="col-md-12 form-search" id="form-submit" method="POST" action="{{ route('system.role.store') }}">
                         <!-- Search section -->
+                        @csrf
                         <div class="form-group form-group2">
                             <div class="text-header">
                                 Thông tin vai trò
@@ -25,7 +26,7 @@
                         <div class="col-md-6" style="padding-right: 12px">
                             <div class="form-group">
                                 <label for="rolename">Tên vai trò: <span style="color: red; font-size: 18px">*</span></label>
-                                <input type="text" class="form-control" id="rolename" name="fullname" required placeholder="Nhập họ tên">
+                                <input type="text" class="form-control" id="rolename" name="name" required placeholder="Nhập tên vai trò">
                             </div>
                             <div class="form-group">
                                 <label for="description">Mô tả: <span style="color: red; font-size: 18px">*</span></label>
@@ -41,39 +42,21 @@
                             <div class="form-group">
                                 <label for="fullname">Phân quyền chức năng: <span style="color: red; font-size: 18px">*</span></label>
                                 <div class="list-action">
-                                    <ul>
-                                        <div class="text-header">
-                                            Nhóm chức năng A
-                                        </div>
+                                    @foreach ($action_list as $actionList)
                                         <ul>
-                                            <li> <input type="checkbox"> Tất cả </li>
-                                            <li> <input type="checkbox"> Chức năng A </li>
-                                            <li> <input type="checkbox"> Chức năng B </li>
-                                            <li> <input type="checkbox"> Chức năng C </li>
+                                            <div class="text-header">
+                                                Nhóm chức năng {{ $actionList[0]->group }}
+                                            </div>
+                                            <ul>
+                                                @foreach ($actionList as $action)
+                                                    <li>
+                                                        <input type="checkbox" name="action[]" value="{{ $action->id }}" id="action-{{ $action->id }}">
+                                                        <label for="action-{{ $action->id }}">{{ $action->name }}</label>
+                                                    </li>
+                                                @endforeach
+                                            </ul>
                                         </ul>
-                                    </ul>
-                                    <ul>
-                                        <div class="text-header">
-                                            Nhóm chức năng B
-                                        </div>
-                                        <ul>
-                                            <li> <input type="checkbox"> Tất cả </li>
-                                            <li> <input type="checkbox"> Chức năng A </li>
-                                            <li> <input type="checkbox"> Chức năng B </li>
-                                            <li> <input type="checkbox"> Chức năng C </li>
-                                        </ul>
-                                    </ul>
-                                    <ul>
-                                        <div class="text-header">
-                                            Nhóm chức năng C
-                                        </div>
-                                        <ul>
-                                            <li> <input type="checkbox"> Tất cả </li>
-                                            <li> <input type="checkbox"> Chức năng A </li>
-                                            <li> <input type="checkbox"> Chức năng B </li>
-                                            <li> <input type="checkbox"> Chức năng C </li>
-                                        </ul>
-                                    </ul>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
