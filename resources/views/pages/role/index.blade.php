@@ -47,18 +47,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @for ($i = 0; $i < 10; $i++)
+                            @foreach ($data as $item)
                                 <tr>
-                                    <td>Admin</td>
+                                    <td>{{ $item->name }}</td>
                                     <td>10</td>
-                                    <td>Quản trị viên, thực hiện quản trị hệ thống</td>
-                                    <td><a class="tag-active" href="{{ route('system.role.edit', $i) }}">Cập nhập</a></td>
+                                    <td>{{ $item->description }}</td>
+                                    <td><a class="tag-active" href="{{ route('system.role.edit', $item->id) }}">Cập nhập</a></td>
                                 </tr>
-                            @endfor
+                            @endforeach
                         </tbody>
                     </table>
                     <div class="pagination-box">
-                        <nav aria-label="Page navigation example">
+                        {{-- <nav aria-label="Page navigation example">
                             <ul class="pagination">
                                 <li class="page-item">
                                     <a class="page-link" href="#" aria-label="Previous">
@@ -74,7 +74,8 @@
                                     </a>
                                 </li>
                             </ul>
-                        </nav>
+                        </nav> --}}
+                        {{ $data->links() }}
                     </div>
                 </div>
             </div>

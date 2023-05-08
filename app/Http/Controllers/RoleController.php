@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RoleStore;
 use App\Models\action;
 use App\Models\role;
 use Illuminate\Http\Request;
@@ -23,8 +24,11 @@ class RoleController extends Controller
     public function index()
     {
         array_pop($this->records);
+        // Lấy tất cả bản ghi từ model
+        $records = role::paginate(1);
         return view('pages/role/index',[
-            'records' => $this->records
+            'records' => $this->records,
+            'data' => $records
         ]);
     }
 
@@ -40,10 +44,22 @@ class RoleController extends Controller
     }
 
     // store
-    public function store(Request $request)
+    public function store(RoleStore $request)
     {
-        // Xử lý lưu tài nguyên
-        dd($request->all());
+        // Xử lý lưu dữ liệu
+        // lưu dữ liệu vảo bảng roles
+        $role = new role();
+        $role->name = $request->name;
+        $role->description = $request->description;
+        $action_ids = '';
+        foreach ($request->action as $action_id) {
+            $action_ids .= $action_id . ',';
+        }
+        $action_ids = substr($action_ids, 0, -1);
+        $role->action_ids = $action_ids;
+        $role->save();
+        // chuyển hướng về trang danh sách
+        return redirect()->route('system.role.index');
     }
 
     public function edit($id)
