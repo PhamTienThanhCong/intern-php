@@ -25,7 +25,7 @@
                 </form>
                 <div class="col-md-12" style="margin-top: 16px; position: relative">
                     <!-- Content -->
-                    <a href="{{ route('auth.service.create') }}">
+                    <a href="{{ route('admin.service.create') }}">
                         <button class="btn-add">
                             <i class="fa-solid fa-file-arrow-down"></i>
                             <p>

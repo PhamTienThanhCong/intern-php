@@ -25,7 +25,7 @@ class QueueController extends Controller
     {
         array_push($this->records, (object)[
             'name' => 'Danh sách cấp số',
-            'url' => route('auth.queue.index')
+            'url' => route('admin.queue.index')
         ]);
         $queue_service = [
             (object) [
@@ -55,7 +55,7 @@ class QueueController extends Controller
     {
         array_push($this->records, (object)[
             'name' => 'Danh sách cấp số',
-            'url' => route('auth.queue.index')
+            'url' => route('admin.queue.index')
         ]);
         $data = (object) [
             "queue_id" => "DV1234",
@@ -77,7 +77,7 @@ class QueueController extends Controller
     {
         array_push($this->records, (object)[
             'name' => 'Danh sách cấp số',
-            'url' => route('auth.queue.index')
+            'url' => route('admin.queue.index')
         ]);
         return view('pages/queue/show', [
             'records' => $this->records,

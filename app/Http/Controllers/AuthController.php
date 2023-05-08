@@ -13,7 +13,7 @@ class AuthController extends Controller
 
     public function logging()
     {
-        return redirect()->route('auth.my-profile');
+        return redirect()->route('admin.my-profile');
     }
 
     public function forgotPassword()

@@ -15,7 +15,7 @@
             <div class="content">
                 <div class="content-white">
                     <!-- Content -->
-                    <a href="{{ route('auth.device.create') }}">
+                    <a href="{{ route('admin.device.create') }}">
                         <button class="btn-add">
                             <i class="fa-solid fa-pen"></i>
                             <p>

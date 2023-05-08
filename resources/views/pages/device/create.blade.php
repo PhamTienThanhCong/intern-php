@@ -11,6 +11,11 @@
         <p class="title">
             Quản lý thiết bị
         </p>
+        @if ($errors->any())
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Lỗi!</strong> {{ $errors->first() }}
+            </div>
+        @endif
         <div class="content-container">
             <div class="content">
                 <div class="content-white">
@@ -23,7 +28,7 @@
                         </div>
                         <div class="form-group">
                             <label for="device_id">Mã Thiết bị: <span style="color: red; font-size: 18px">*</span></label>
-                            <input type="text" class="form-control" id="device_id" name="device_id" placeholder="Nhập mã Thiết bị">
+                            <input type="text" class="form-control" id="device_id" name="id" placeholder="Nhập mã Thiết bị">
                         </div>
                         <div class="form-group">
                             <label for="device_type">Loại thiết bị:</label>
@@ -64,7 +69,7 @@
                     </form>                    
                 </div>
                 <div class="form-btn">
-                    <a href="{{ route('auth.device.index') }}">
+                    <a href="{{ route('admin.device.index') }}">
                         <button class="btn btn-blur">Hủy</button>
                     </a>
                     <button class="btn btn-bold" onclick="submit()">Thêm thiết bị</button>

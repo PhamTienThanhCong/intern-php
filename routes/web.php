@@ -20,46 +20,47 @@ use Illuminate\Support\Facades\Route;
 */
 
 // route for AuthController
-Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
-Route::post('/auth/logging', [AuthController::class, 'logging'])->name('auth.logging');
-Route::get('/auth/forgot-password', [AuthController::class, 'forgotPassword'])->name('auth.forgot-password');
-Route::get('/auth/new-password', [AuthController::class, 'newPassword'])->name('auth.new-password');
-Route::get('/auth/my-profile', [AuthController::class, 'myProfile'])->name('auth.my-profile');
+Route::get('/admin/login', [AuthController::class, 'login'])->name('admin.login');
+Route::post('/admin/logging', [AuthController::class, 'logging'])->name('admin.logging');
+Route::get('/admin/forgot-password', [AuthController::class, 'forgotPassword'])->name('admin.forgot-password');
+Route::get('/admin/new-password', [AuthController::class, 'newPassword'])->name('admin.new-password');
+Route::get('/admin/my-profile', [AuthController::class, 'myProfile'])->name('admin.my-profile');
 
-Route::resource('/auth/device', DeviceController::class)->names([
-    'index' => 'auth.device.index',
-    'create' => 'auth.device.create',
-    'edit' => 'auth.device.edit',
-    'update' => 'auth.device.update',
-    'show' => 'auth.device.show',
-    'destroy' => 'auth.device.destroy',
+Route::resource('/admin/device', DeviceController::class)->names([
+    'index' => 'admin.device.index',
+    'create' => 'admin.device.create',
+    'edit' => 'admin.device.edit',
+    'update' => 'admin.device.update',
+    'show' => 'admin.device.show',
+    'destroy' => 'admin.device.destroy',
 ]);
 
-Route::resource('/auth/service', ServiceController::class)->names([
-    'index' => 'auth.service.index',
-    'create' => 'auth.service.create',
-    'edit' => 'auth.service.edit',
-    'update' => 'auth.service.update',
-    'show' => 'auth.service.show',
-    'destroy' => 'auth.service.destroy',
+Route::resource('/admin/service', ServiceController::class)->names([
+    'index' => 'admin.service.index',
+    'create' => 'admin.service.create',
+    'store' => 'admin.service.store',
+    'edit' => 'admin.service.edit',
+    'update' => 'admin.service.update',
+    'show' => 'admin.service.show',
+    'destroy' => 'admin.service.destroy',
 ]);
 
-Route::resource('/auth/queue', QueueController::class)->names([
-    'index' => 'auth.queue.index',
-    'create' => 'auth.queue.create',
-    'update' => 'auth.queue.update',
-    'show' => 'auth.queue.show',
-    'destroy' => 'auth.queue.destroy',
+Route::resource('/admin/queue', QueueController::class)->names([
+    'index' => 'admin.queue.index',
+    'create' => 'admin.queue.create',
+    'update' => 'admin.queue.update',
+    'show' => 'admin.queue.show',
+    'destroy' => 'admin.queue.destroy',
 ]);
 
-Route::get('/auth/report', function () {
+Route::get('/admin/report', function () {
     $records = [
         (object)[
             'name' => 'Báo cáo'
         ]
     ];
     return view('pages/report/index',['records' => $records]);
-})->name('auth.report.index');
+})->name('admin.report.index');
 
 Route::get('/system/history_user', function () {
     $records = [

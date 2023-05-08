@@ -16,7 +16,7 @@
         </p>
         <div class="content-container">
             <div class="content row" style="max-width: 1150px">
-                <a href="{{ route('auth.service.edit', $id) }}">
+                <a href="{{ route('admin.service.edit', $id) }}">
                     <button class="btn-add">
                         <i class="fa-solid fa-pen"></i>
                         <p>
@@ -25,7 +25,7 @@
                         </p>
                     </button>
                 </a>
-                <a href="{{ route('auth.service.index') }}">
+                <a href="{{ route('admin.service.index') }}">
                     <button class="btn-add" style="transform:translateY(100px)">
                         <i class="fa-solid fa-rotate-left"></i>
                         <p>
@@ -50,7 +50,7 @@
                                         Mã dịch vụ:
                                     </span>
                                     <span class="span-data">
-                                        {{ $data->service_id }}
+                                        {{ $data->id }}
                                     </span>
                                 </label>
                             </div>
@@ -60,7 +60,7 @@
                                         Tên dịch vụ:
                                     </span>
                                     <span class="span-data">
-                                        {{ $data->service_name }}
+                                        {{ $data->name }}
                                     </span>
                                 </label>
                             </div>
@@ -70,7 +70,7 @@
                                         Mô tả:
                                     </span>
                                     <span class="span-data">
-                                        {{ $data->service_description }}
+                                        {{ $data->description }}
                                     </span>
                                 </label>
                             </div>
@@ -83,26 +83,26 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="auto-range" style="width: 130px">Tăng tự động từ:</label>
-                                    <input class="form-control mini-input" type="text" value="" id=""
-                                        placeholder="0000">
+                                    <input class="form-control mini-input" type="text"
+                                        placeholder="0000" value="{{ $data->prefix }}">
                                     <label for="" style="width: 50px">Đến:</label>
-                                    <input class="form-control mini-input" type="text" value="" id=""
-                                        placeholder="9999">
+                                    <input class="form-control mini-input" type="text"
+                                        placeholder="9999" value="{{ $data->surfix }}">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="Prefix" style="width: 130px">Prefix:</label>
-                                    <input class="form-control mini-input" type="text" value="" id=""
-                                        placeholder="0001">
+                                    <input class="form-control mini-input" type="text"
+                                        placeholder="0001" value="{{ $data->prefix }}">
     
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="Surfix" style="width: 130px">Surfix:</label>
-                                    <input class="form-control mini-input" type="text" value="" id=""
-                                        placeholder="0001">
+                                    <input class="form-control mini-input" type="text"
+                                        placeholder="0001" value="{{ $data->surfix }}">
     
                                 </div>
                             </div>
@@ -110,7 +110,7 @@
                                 <div class="form-group">
                                     <label for="auto_reset" style="width: 130px">Reset mỗi ngày</label>
                                     <p>
-                                        Ví dụ: 201-2001
+                                        {{ $data->reset == 1 ? 'Có' : 'khum cho' }}
                                     </p>
                                 </div>
                             </div>

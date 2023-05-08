@@ -87,7 +87,7 @@
                 </form>
                 <div class="col-md-12" style="margin-top: 16px; position: relative">
                     <!-- Content -->
-                    <a href="{{ route('auth.queue.create') }}">
+                    <a href="{{ route('admin.queue.create') }}">
                         <button class="btn-add">
                             <i class="fa-solid fa-plus"></i>
                             <p>
@@ -127,7 +127,7 @@
                                     </td>
                                     <td>Nguồn cấp</td>
                                     <td class="text-center">
-                                        <a href="{{ route('auth.queue.show', $i) }}" class="tag-active">Chi tiết</a>
+                                        <a href="{{ route('admin.queue.show', $i) }}" class="tag-active">Chi tiết</a>
                                     </td>
                                 </tr>
                             @endfor

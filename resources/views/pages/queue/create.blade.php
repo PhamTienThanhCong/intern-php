@@ -33,7 +33,7 @@
                             <i class="fa-solid fa-caret-down"></i>
                         </div>
                         <div class="form-btn">
-                            <a href="{{ route('auth.queue.index') }}">
+                            <a href="{{ route('admin.queue.index') }}">
                                 <button type="button" class="btn btn-blur">Hủy bỏ</button>
                             </a>
                             <button type="button" class="btn btn-bold" data-bs-toggle="modal"

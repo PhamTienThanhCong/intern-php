@@ -14,7 +14,7 @@ class DeviceController extends Controller
             ],
             (object)[
                 'name' => 'Danh sách thiết bị',
-                'url' => route('auth.device.index')
+                'url' => route('admin.device.index')
             ],
         ];
     }

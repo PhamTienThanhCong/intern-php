@@ -44,7 +44,7 @@
                 </ul>
             </div>
         </div>
-        <a href="{{ route("auth.my-profile") }}">
+        <a href="{{ route("admin.my-profile") }}">
             <div class="infor-user">
                 <div class="avatar">
                     <img src="{{ asset('images/avatar.jpg') }}" alt="avatar">

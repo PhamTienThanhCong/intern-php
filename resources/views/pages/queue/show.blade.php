@@ -15,7 +15,7 @@
             <div class="content">
                 <div class="content-white">
                     <!-- Content -->
-                    <a href="{{ route('auth.queue.index') }}">
+                    <a href="{{ route('admin.queue.index') }}">
                         <button class="btn-add">
                             <i class="fa-solid fa-rotate-left"></i>
                             <p>
