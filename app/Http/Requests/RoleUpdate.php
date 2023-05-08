@@ -13,7 +13,7 @@ class RoleUpdate extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,21 @@ class RoleUpdate extends FormRequest
     public function rules()
     {
         return [
-            //
+            // name, description là bắt buộc
+            'name' => 'required',
+            'description' => 'required',
+            'name' => 'max:50',
+            'action' => 'required'
+        ];
+    }
+    // Thông báo lỗi
+    public function messages()
+    {
+        return [
+            'name.required' => 'Tên vai trò không được để trống',
+            'description.required' => 'Mô tả không được để trống',
+            'name.max' => 'Tên vai trò không được quá 50 ký tự',
+            'action.required' => 'Vui lòng chọn ít nhất một quyền'
         ];
     }
 }

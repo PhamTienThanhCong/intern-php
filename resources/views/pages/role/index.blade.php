@@ -50,7 +50,7 @@
                             @foreach ($data as $item)
                                 <tr>
                                     <td>{{ $item->name }}</td>
-                                    <td>10</td>
+                                    <td>{{ $item->total }}</td>
                                     <td>{{ $item->description }}</td>
                                     <td><a class="tag-active" href="{{ route('system.role.edit', $item->id) }}">Cập nhập</a></td>
                                 </tr>
@@ -58,24 +58,9 @@
                         </tbody>
                     </table>
                     <div class="pagination-box">
-                        {{-- <nav aria-label="Page navigation example">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                        <i class="fa-solid fa-caret-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                        <i class="fa-solid fa-caret-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav> --}}
-                        {{ $data->links() }}
+
+                        {{ $data->links('pagination::bootstrap-4') }}
+
                     </div>
                 </div>
             </div>
