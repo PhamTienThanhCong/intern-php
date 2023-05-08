@@ -73,6 +73,7 @@ Route::get('/system/history_user', function () {
 Route::resource('/system/user', UserController::class)->names([
     'index' => 'system.user.index',
     'create' => 'system.user.create',
+    'store' => 'system.user.store',
     'edit' => 'system.user.edit',
     'update' => 'system.user.update',
     'destroy' => 'system.user.destroy',
