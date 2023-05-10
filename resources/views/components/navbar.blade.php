@@ -58,7 +58,7 @@
                 </a>
             </ul>
         </li>
-        <a href="">
+        <a href="{{ route('admin.logout') }}">
             <li class="item item-end">
                 <i class="fas fa-sign-out-alt"></i>
                 Logout

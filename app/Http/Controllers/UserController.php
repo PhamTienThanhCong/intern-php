@@ -58,6 +58,7 @@ class UserController extends Controller
         $user->role_id = $request->role_id;
         $user->status = $request->status;
         $user->save();
+        $this->historyUser("Thêm mới tài khoản $request->username");
         return redirect()->route('system.user.index');
     }
     public function edit($id)
@@ -78,9 +79,18 @@ class UserController extends Controller
 
     public function update(UserUpdate $request, $id)
     {
-        // Xử lý cập nhật 
-        // kiểm tra xem có trùng username và email không
+        // message
         $user = User::find($id);
+        if ($user->email != $request->email){
+            $request->validate([
+                'email' => 'unique:users,email'
+            ]);
+        }
+        if ($user->username != $request->username){
+            $request->validate([
+                'username' => 'unique:users,username'
+            ]);
+        }
         $user->full_name = $request->full_name;
         $user->email = $request->email;
         $user->phone = $request->phone;
@@ -88,7 +98,7 @@ class UserController extends Controller
         $user->role_id = $request->role_id;
         $user->status = $request->status;
         $user->save();
-        
+        $this->historyUser("Cập nhật thông tin tài khoản $request->username");
         return redirect()->route('system.user.edit', $id);
     }
 

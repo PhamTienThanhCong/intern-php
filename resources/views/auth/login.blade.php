@@ -37,7 +37,7 @@
                         @csrf
                         <div class="input-group mb-3">
                             <input type="text" class="form-control form-error" id="username"
-                                name="username" placeholder="Tên đăng nhập">
+                                name="username" placeholder="Tên đăng nhập" >
                         </div>
                         <label for="password" class="form-label">
                             Mật khẩu

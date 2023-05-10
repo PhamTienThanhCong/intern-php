@@ -163,43 +163,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @for ($i = 0; $i < 10; $i++)
+                                    @foreach($data2 as $item)
                                         <tr>
-                                            <td class="col-md-6">{{ $i + 1 }}</td>
                                             <td class="col-md-6">
-                                                @if ($i % 2 == 0)
-                                                    <i class="fa-solid fa-circle unconnected" style="color: #6C7585"></i>
-                                                    Vắng
-                                                @elseif( $i % 3 == 0)
-                                                    <i class="fa-solid fa-circle connected"></i>
-                                                    Đã hoàn thành
-                                                @else 
-                                                    <i class="fa-solid fa-circle connected" style="color: blue"></i>
-                                                    Đang thực hiện
-                                                @endif 
+                                                {{ $item->stt }}
+                                            </td>
+                                            <td class="col-md-6">
+                                                <i class="fa-solid fa-circle connected" style="color: {{ $item->status_color() }}"></i>
+                                                {{ $item->status() }}
                                             </td>
                                         </tr>
-                                    @endfor
+                                    @endforeach
                                 </tbody>
                             </table>
                             <div class="pagination-box">
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination">
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Previous">
-                                                <i class="fa-solid fa-caret-left"></i>
-                                            </a>
-                                        </li>
-                                        <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                                <i class="fa-solid fa-caret-right"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
+                                {{ $data2->links('pagination::bootstrap-4') }}
                             </div>
                         </div>
                     </div>

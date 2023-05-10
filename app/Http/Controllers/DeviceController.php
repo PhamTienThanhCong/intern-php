@@ -61,6 +61,7 @@ class DeviceController extends Controller
         }
         $newDevice->service_ids = $service_ids;
         $newDevice->save();
+        $this->historyUser("Thêm mới thiết bị $request->id");
         return redirect()->route('admin.device.show', $request->id);
     }
 
@@ -98,6 +99,7 @@ class DeviceController extends Controller
         }
         $newDevice->service_ids = $service_ids;
         $newDevice->save();
+        $this->historyUser("Cập nhật thông tin thiết bị $request->id");
         return redirect()->route('admin.device.show', $request->id);
     }
 

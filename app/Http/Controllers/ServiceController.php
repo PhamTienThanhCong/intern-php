@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ServiceStore;
 use App\Http\Requests\ServiceUpdate;
 use App\Models\service;
+use App\Models\ticket;
 use Illuminate\Http\Request;
 
 class ServiceController extends Controller
@@ -61,6 +62,7 @@ class ServiceController extends Controller
         $newService->suffix = $suffix;
         $newService->reset = $request->input('reset') == 'on' ? 1 : 0;
         $newService->save();
+        $this->historyUser("Thêm mới dịch vụ $request->id");
         return redirect()->route('admin.service.index');
     }
 
@@ -107,16 +109,21 @@ class ServiceController extends Controller
         $newService->suffix = $suffix;
         $newService->reset = $request->input('reset') == 'on' ? 1 : 0;
         $newService->save();
+        $this->historyUser("Cập nhật thông tin dịch vụ $request->id");
         return redirect()->route('admin.service.show', $newService->id);
     }
 
     public function show($id)
     {
         $data = service::find($id);
+        $data2 = ticket::where('service_id', $data->id)
+                ->orderBy('created_at', 'desc')
+                ->paginate(10);
         return view('pages/service/show', [
             'data' => $data,
+            'data2' => $data2,
             'id' => $id,
-            'records' => $this->records
+            'records' => $this->records,
         ]);
     }
 
