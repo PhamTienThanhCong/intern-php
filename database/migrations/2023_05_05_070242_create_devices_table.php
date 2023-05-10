@@ -20,7 +20,8 @@ class CreateDevicesTable extends Migration
             $table->string('password', 100);
             $table->string('ip', 100);
             $table->string('service_ids', 100);
-            $table->boolean('status')->default(1);
+            $table->string('type', 100);
+            $table->boolean('online')->default(true);
             $table->timestamps();
         });
     }

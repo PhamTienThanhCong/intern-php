@@ -94,6 +94,12 @@ class ServiceController extends Controller
         }
         // Xử lý lưu tài nguyên
         $newService = service::find($id);
+        if ($id != $request->input('id')) {
+            $check = service::find($request->input('id'));
+            if ($check) {
+                return redirect()->back()->withErrors(['id' => 'ID đã tồn tại']);
+            }
+        }
         $newService->id = $request->input('id');
         $newService->name = $request->input('name');
         $newService->description = $request->input('description');

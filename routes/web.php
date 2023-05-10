@@ -29,6 +29,7 @@ Route::get('/admin/my-profile', [AuthController::class, 'myProfile'])->name('adm
 Route::resource('/admin/device', DeviceController::class)->names([
     'index' => 'admin.device.index',
     'create' => 'admin.device.create',
+    'store' => 'admin.device.store',
     'edit' => 'admin.device.edit',
     'update' => 'admin.device.update',
     'show' => 'admin.device.show',
