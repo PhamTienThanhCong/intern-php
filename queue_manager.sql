@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th5 16, 2023 lúc 08:32 AM
+-- Thời gian đã tạo: Th5 17, 2023 lúc 09:03 PM
 -- Phiên bản máy phục vụ: 5.7.33
 -- Phiên bản PHP: 7.4.19
 
@@ -121,7 +121,12 @@ INSERT INTO `history_users` (`id`, `user_id`, `ip`, `action`, `created_at`, `upd
 (19, 1, '127.0.0.1', 'Cập nhật thông tin thiết bị tb01', '2023-05-16 08:27:11', '2023-05-16 08:27:11'),
 (20, 1, '127.0.0.1', 'Cập nhật thông tin thiết bị tb01', '2023-05-16 08:27:25', '2023-05-16 08:27:25'),
 (21, 1, '127.0.0.1', 'Thêm mới thiết bị ', '2023-05-16 08:27:53', '2023-05-16 08:27:53'),
-(22, 1, '127.0.0.1', 'Thêm mới thiết bị tb03', '2023-05-16 08:28:35', '2023-05-16 08:28:35');
+(22, 1, '127.0.0.1', 'Thêm mới thiết bị tb03', '2023-05-16 08:28:35', '2023-05-16 08:28:35'),
+(23, 1, '127.0.0.1', 'Đăng nhập vào hệ thống', '2023-05-16 09:01:16', '2023-05-16 09:01:16'),
+(24, 1, '127.0.0.1', 'Đăng nhập vào hệ thống', '2023-05-17 19:00:07', '2023-05-17 19:00:07'),
+(25, 1, '127.0.0.1', 'Đăng nhập vào hệ thống', '2023-05-17 19:01:47', '2023-05-17 19:01:47'),
+(26, 1, '127.0.0.1', 'Đăng xuất khỏi hệ thống', '2023-05-17 20:52:09', '2023-05-17 20:52:09'),
+(27, 1, '127.0.0.1', 'Đăng nhập vào hệ thống', '2023-05-17 20:57:37', '2023-05-17 20:57:37');
 
 -- --------------------------------------------------------
 
@@ -250,7 +255,8 @@ CREATE TABLE `tickets` (
 INSERT INTO `tickets` (`id`, `stt`, `name_user`, `phone`, `email`, `expires_at`, `status`, `device_id`, `service_id`, `created_at`, `updated_at`) VALUES
 (1, 1, 'Trần Bình Dương', '0987654321', NULL, '2023-05-16 11:00:00', 1, 3, 1, '2023-05-16 08:30:11', '2023-05-16 08:30:11'),
 (2, 1, 'Nguyễn Thị Lan', '0987654321', NULL, '2023-05-16 11:00:00', 1, 2, 3, '2023-05-16 08:30:26', '2023-05-16 08:30:26'),
-(3, 2, 'Phạm Tiến Thành Công', '0987654321', NULL, '2023-05-16 11:00:00', 1, 2, 1, '2023-05-16 08:30:35', '2023-05-16 08:30:35');
+(3, 2, 'Phạm Tiến Thành Công', '0987654321', NULL, '2023-05-16 11:00:00', 1, 2, 1, '2023-05-16 08:30:35', '2023-05-16 08:30:35'),
+(4, 1, 'phạm dũng', '0969696966', NULL, '2023-05-16 11:00:00', 1, 1, 2, '2023-05-16 10:38:31', '2023-05-16 10:38:31');
 
 -- --------------------------------------------------------
 
@@ -393,7 +399,7 @@ ALTER TABLE `devices`
 -- AUTO_INCREMENT cho bảng `history_users`
 --
 ALTER TABLE `history_users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT cho bảng `migrations`
@@ -423,7 +429,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT cho bảng `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `tokens`
