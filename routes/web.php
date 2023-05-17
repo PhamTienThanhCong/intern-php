@@ -28,6 +28,7 @@ Route::get('/admin/forgot-password', [AuthController::class, 'forgotPassword'])-
 Route::get('/admin/new-password', [AuthController::class, 'newPassword'])->name('admin.new-password');
 
 Route::middleware(['web', 'auth'])->group(function () {
+    Route::get('/Dashboard', [ReportController:: class, 'Dashboard'])->name('admin.dashboard');
     Route::get('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
     Route::get('/admin/my-profile', [AuthController::class, 'myProfile'])->name('admin.my-profile');
 
