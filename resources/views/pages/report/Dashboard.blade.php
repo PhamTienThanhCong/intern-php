@@ -21,88 +21,100 @@
                 <div class="col-md-9">
                     <div class="col-md-12 box-list">
                         <div class="box-list-item">
-                            <div class="title-item">
-                                <div class="item-icon icon-color-blue">
-                                    <i class="fa-regular fa-calendar"></i>
-                                </div>
-                                <div class="item-tile">
-                                    Số thứ tự đã cấp
-                                </div>
-                            </div>
-                            <div class="title-item2">
-                                <div class="item-tile2">
-                                    4.221
-                                </div>
-                                <div class="bgare-icon">
-                                    <div class="bgare-content">
-                                        <i class="fa-solid fa-down-long"></i> 32,41%
+                            <a href="{{ route('admin.queue.index') }}">
+                                <div class="title-item">
+                                    <div class="item-icon icon-color-blue">
+                                        <i class="fa-regular fa-calendar"></i>
+                                    </div>
+                                    <div class="item-tile">
+                                        Số thứ tự đã cấp
                                     </div>
                                 </div>
-                            </div>
+                                <div class="title-item2">
+                                    <div class="item-tile2">
+                                        4.221
+                                    </div>
+                                    <div class="bgare-icon">
+                                        <div class="bgare-content">
+                                            <i class="fa-solid fa-down-long"></i> 32,41%
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
 
                         <div class="box-list-item">
-                            <div class="title-item">
-                                <div class="item-icon icon-color-green">
-                                    <i class="fa-regular fa-calendar-check"></i>
-                                </div>
-                                <div class="item-tile">
-                                    Số thứ tự đã sử dụng
-                                </div>
-                            </div>
-                            <div class="title-item2">
-                                <div class="item-tile2">
-                                    4.221
-                                </div>
-                                <div class="bgare-icon">
-                                    <div class="bgare-content">
-                                        <i class="fa-solid fa-down-long"></i> 32,41%
+                            <a href="{{ route('admin.queue.index') }}">
+
+                                <div class="title-item">
+                                    <div class="item-icon icon-color-green">
+                                        <i class="fa-regular fa-calendar-check"></i>
+                                    </div>
+                                    <div class="item-tile">
+                                        Số thứ tự đã sử dụng
                                     </div>
                                 </div>
-                            </div>
+                                <div class="title-item2">
+                                    <div class="item-tile2">
+                                        4.221
+                                    </div>
+                                    <div class="bgare-icon">
+                                        <div class="bgare-content">
+                                            <i class="fa-solid fa-down-long"></i> 32,41%
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
 
                         <div class="box-list-item">
-                            <div class="title-item">
-                                <div class="item-icon icon-color-orange">
-                                    <i class="fa-solid fa-phone-flip"></i>
-                                </div>
-                                <div class="item-tile">
-                                    Số thứ tự đang chờ
-                                </div>
-                            </div>
-                            <div class="title-item2">
-                                <div class="item-tile2">
-                                    4.221
-                                </div>
-                                <div class="bgare-icon">
-                                    <div class="bgare-content">
-                                        <i class="fa-solid fa-down-long"></i> 32,41%
+                            <a href="{{ route('admin.queue.index') }}">
+
+                                <div class="title-item">
+                                    <div class="item-icon icon-color-orange">
+                                        <i class="fa-solid fa-phone-flip"></i>
+                                    </div>
+                                    <div class="item-tile">
+                                        Số thứ tự đang chờ
                                     </div>
                                 </div>
-                            </div>
+                                <div class="title-item2">
+                                    <div class="item-tile2">
+                                        4.221
+                                    </div>
+                                    <div class="bgare-icon">
+                                        <div class="bgare-content">
+                                            <i class="fa-solid fa-down-long"></i> 32,41%
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
 
                         <div class="box-list-item">
-                            <div class="title-item">
-                                <div class="item-icon icon-color-red">
-                                    <i class="fa-regular fa-bookmark"></i>
-                                </div>
-                                <div class="item-tile">
-                                    Số thứ tự đã bỏ qua
-                                </div>
-                            </div>
-                            <div class="title-item2">
-                                <div class="item-tile2">
-                                    4.221
-                                </div>
-                                <div class="bgare-icon">
-                                    <div class="bgare-content">
-                                        <i class="fa-solid fa-down-long"></i> 32,41%
+                            <a href="{{ route('admin.queue.index') }}">
+
+                                <div class="title-item">
+                                    <div class="item-icon icon-color-red">
+                                        <i class="fa-regular fa-bookmark"></i>
+                                    </div>
+                                    <div class="item-tile">
+                                        Số thứ tự đã bỏ qua
                                     </div>
                                 </div>
-                            </div>
+                                <div class="title-item2">
+                                    <div class="item-tile2">
+                                        4.221
+                                    </div>
+                                    <div class="bgare-icon">
+                                        <div class="bgare-content">
+                                            <i class="fa-solid fa-down-long"></i> 32,41%
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
+
                     </div>
                     <div class="chart-container">
                         <div class="header-chart">
@@ -133,7 +145,7 @@
                         </p>
                         <div class="box-service">
                             <div class="content-left">
-                                <div class="border-circle" >
+                                <div class="border-circle">
                                     70%
                                 </div>
                                 <div class="text-content-left">
@@ -148,10 +160,12 @@
                             </div>
                             <div class="content-right">
                                 <p>
-                                    <i class="fa-solid fa-circle" style="color: #FFD130"></i> Đang hoạt động: <span>3.799</span>
+                                    <i class="fa-solid fa-circle" style="color: #FFD130"></i> Đang hoạt động:
+                                    <span>3.799</span>
                                 </p>
                                 <p>
-                                    <i class="fa-solid fa-circle" style="color: #7E7D88"></i> Ngưng hoạt động <span>3.799</span>
+                                    <i class="fa-solid fa-circle" style="color: #7E7D88"></i> Ngưng hoạt động
+                                    <span>3.799</span>
                                 </p>
                             </div>
                         </div>
@@ -172,10 +186,12 @@
                             </div>
                             <div class="content-right">
                                 <p>
-                                    <i class="fa-solid fa-circle" style="color: #4277FF"></i> Đang hoạt động: <span>3.799</span>
+                                    <i class="fa-solid fa-circle" style="color: #4277FF"></i> Đang hoạt động:
+                                    <span>3.799</span>
                                 </p>
                                 <p>
-                                    <i class="fa-solid fa-circle" style="color: #7E7D88"></i> Ngưng hoạt động <span>3.799</span>
+                                    <i class="fa-solid fa-circle" style="color: #7E7D88"></i> Ngưng hoạt động
+                                    <span>3.799</span>
                                 </p>
                             </div>
                         </div>
@@ -199,7 +215,8 @@
                                     <i class="fa-solid fa-circle" style="color: #35C75A"></i> Đang chờ: <span>3.799</span>
                                 </p>
                                 <p>
-                                    <i class="fa-solid fa-circle" style="color: #7E7D88"></i> Đã sử dụng <span>3.799</span>
+                                    <i class="fa-solid fa-circle" style="color: #7E7D88"></i> Đã sử dụng
+                                    <span>3.799</span>
                                 </p>
                                 <p>
                                     <i class="fa-solid fa-circle" style="color: #F178B6"></i> Bỏ qua <span>3.799</span>
@@ -209,13 +226,15 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="calendar calendar-first" id="calendar_first">
-                                <div class="calendar_header">
-                                    <button class="switch-month switch-left"> <i class="fa fa-chevron-left"></i></button>
-                                     <h2></h2>
-                                    <button class="switch-month switch-right"> <i class="fa fa-chevron-right"></i></button>
-                                </div>
-                                <div class="calendar_weekdays"></div>
-                                <div class="calendar_content"></div>
+                                    <div class="calendar_header">
+                                        <button class="switch-month switch-left"> <i
+                                                class="fa fa-chevron-left"></i></button>
+                                        <h2></h2>
+                                        <button class="switch-month switch-right"> <i
+                                                class="fa fa-chevron-right"></i></button>
+                                    </div>
+                                    <div class="calendar_weekdays"></div>
+                                    <div class="calendar_content"></div>
                                 </div>
                             </div>
                         </div>
@@ -226,9 +245,9 @@
     @endsection
 
     @section('js')
-    <script src="{{ asset('js/Dashboard.js') }}"></script>
-    <script src="{{ asset('calendar/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('calendar/js/popper.js') }}"></script>
-    <script src="{{ asset('calendar/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('calendar/js/main.js') }}"></script>
+        <script src="{{ asset('js/Dashboard.js') }}"></script>
+        <script src="{{ asset('calendar/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('calendar/js/popper.js') }}"></script>
+        <script src="{{ asset('calendar/js/bootstrap.min.js') }}"></script>
+        <script src="{{ asset('calendar/js/main.js') }}"></script>
     @endsection
